@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body style="font-family: sans-serif; padding: 20px;">
+    <h3>Calculadora de Orçamento</h3>
+    <input type="number" id="n1" placeholder="Valor 1">
+    <select id="operacao">
+        <option value="soma">+</option>
+        <option value="sub">-</option>
+        <option value="mult">*</option>
+        <option value="div">/</option>
+    </select>
+    <input type="number" id="n2" placeholder="Valor 2">
+    <button onclick="calcular()">Calcular</button>
+    <h3 id="resOficina">Resultado: -</h3>
+
+    <script>
+        function calcular() {
+            const v1 = parseFloat(document.getElementById('n1').value);
+            const v2 = parseFloat(document.getElementById('n2').value);
+            const op = document.getElementById('operacao').value;
+            const campoRes = document.getElementById('resOficina');
+            let res;
+
+            if (op === "soma") res = v1 + v2;
+            else if (op === "sub") res = v1 - v2;
+            else if (op === "mult") res = v1 * v2;
+            else if (op === "div") res = v2 !== 0 ? v1 / v2 : "Erro: Div 0";
+
+            campoRes.innerText = `Resultado: ${res}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body style="font-family: sans-serif; padding: 20px;">
+    <h3>Missões do Jogo</h3>
+    <input type="text" id="inputMissao" placeholder="Nova missão">
+    <button onclick="addMissao()">Adicionar</button>
+    <ul id="ulMissoes"></ul>
+
+    <script>
+        function addMissao() {
+            const input = document.getElementById('inputMissao');
+            const lista = document.getElementById('ulMissoes');
+            if (input.value === "") return;
+
+            const li = document.createElement('li');
+            li.innerText = input.value;
+            li.style.cursor = "pointer";
+            li.onclick = () => {
+                li.style.textDecoration = "line-through";
+                li.style.color = "gray";
+            };
+            lista.appendChild(li);
+            input.value = "";
+        }
+    </script>
+</body>
+</html>

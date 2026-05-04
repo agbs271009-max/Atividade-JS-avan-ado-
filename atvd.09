@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body style="font-family: sans-serif; padding: 20px;">
+    <h3>Votação Representante</h3>
+    <button onclick="votar(0)">Ana</button>
+    <button onclick="votar(1)">Beto</button>
+    <button onclick="votar(2)">Carla</button>
+    <p>Ana: <span id="v-0">0</span> | Beto: <span id="v-1">0</span> | Carla: <span id="v-2">0</span></p>
+
+    <script>
+        let votos = [0, 0, 0];
+        function votar(i) {
+            votos[i]++;
+            document.getElementById(`v-${i}`).innerText = votos[i];
+        }
+    </script>
+</body>
+</html>

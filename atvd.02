@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body style="font-family: sans-serif; padding: 20px;">
+    <h3>Porteiro Digital</h3>
+    <input type="number" id="inputIdade" placeholder="Sua idade">
+    <button onclick="verificarEntrada()">Verificar</button>
+    <p id="msgPorteiro" style="font-weight: bold;"></p>
+
+    <script>
+        function verificarEntrada() {
+            const idade = document.getElementById('inputIdade').value;
+            const msg = document.getElementById('msgPorteiro');
+            if (idade === "") return;
+
+            if (parseInt(idade) >= 18) {
+                msg.innerText = "Entrada permitida";
+                msg.style.color = "green";
+            } else {
+                msg.innerText = "Entrada proibida";
+                msg.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

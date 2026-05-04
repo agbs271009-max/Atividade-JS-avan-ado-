@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body style="font-family: sans-serif; padding: 20px;">
+    <h3>Adivinhe o número (1 a 20)</h3>
+    <input type="number" id="palpite">
+    <button onclick="jogar()">Tentar</button>
+    <p id="feedback"></p>
+
+    <script>
+        let segredo = Math.floor(Math.random() * 20) + 1;
+        let tentativas = 0;
+
+        function jogar() {
+            const p = parseInt(document.getElementById('palpite').value);
+            const f = document.getElementById('feedback');
+            tentativas++;
+
+            if (p === segredo) {
+                f.innerText = `Acertou! Foram ${tentativas} tentativas.`;
+                segredo = Math.floor(Math.random() * 20) + 1; // Reinicia
+                tentativas = 0;
+            } else {
+                f.innerText = p > segredo ? "Muito alto!" : "Muito baixo!";
+            }
+        }
+    </script>
+</body>
+</html>

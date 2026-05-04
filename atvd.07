@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body style="font-family: sans-serif; padding: 20px;">
+    <h3>Cadastro Simples</h3>
+    <input type="text" id="nome" placeholder="Nome"><br><br>
+    <input type="text" id="email" placeholder="Email"><br>
+    <p id="msgErro" style="color: red; font-size: 0.8rem;"></p>
+    <button onclick="validar()">Cadastrar</button>
+
+    <script>
+        function validar() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const erro = document.getElementById('msgErro');
+
+            if (nome === "" || !email.includes("@")) {
+                erro.innerText = "Nome vazio ou email sem @!";
+            } else {
+                erro.innerText = "";
+                alert("Sucesso!");
+            }
+        }
+    </script>
+</body>
+</html>

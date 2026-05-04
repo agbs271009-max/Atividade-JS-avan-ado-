@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body>
+    <div style="text-align: center; font-family: sans-serif; margin-top: 50px;">
+        <p id="contadorTxt" style="font-size: 1.5rem;">Total de cliques: 0</p>
+        <button id="btnGostei" style="padding: 10px 20px; cursor: pointer;">Gostei 👍</button>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btnGostei');
+        const textoContador = document.getElementById('contadorTxt');
+        let cliques = 0;
+
+        btn.addEventListener('click', () => {
+            cliques++;
+            textoContador.innerText = `Total de cliques: ${cliques}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body style="font-family: sans-serif; padding: 20px;">
+    <h3>Formulário Profissional</h3>
+    <input type="text" id="cNome" placeholder="Nome completo"><br>
+    <input type="email" id="cEmail" placeholder="Email"><br>
+    <input type="number" id="cIdade" placeholder="Idade"><br>
+    <input type="password" id="cSenha" placeholder="Senha (mín 8 chars)"><br>
+    <input type="password" id="cConf" placeholder="Confirme a senha"><br>
+    <button onclick="validarTudo()" style="margin-top:10px">Enviar</button>
+    <div id="erros" style="color: red; margin-top: 10px;"></div>
+
+    <script>
+        function validarTudo() {
+            const nome = document.getElementById('cNome').value;
+            const email = document.getElementById('cEmail').value;
+            const idade = parseInt(document.getElementById('cIdade').value);
+            const senha = document.getElementById('cSenha').value;
+            const conf = document.getElementById('cConf').value;
+            const erroDiv = document.getElementById('erros');
+            erroDiv.innerHTML = "";
+
+            if (!nome || !email || !idade || !senha) { alert("Preencha tudo!"); return; }
+            if (idade < 18) erroDiv.innerHTML += "Menor de 18 anos.<br>";
+            if (senha.length < 8) erroDiv.innerHTML += "Senha curta.<br>";
+            if (senha !== conf) erroDiv.innerHTML += "Senhas diferentes.<br>";
+
+            if (erroDiv.innerHTML === "") alert("Cadastro realizado!");
+        }
+    </script>
+</body>
+</html>
